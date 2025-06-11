@@ -1,20 +1,23 @@
 function calculateBodaFare() {
-    let distanceInKm = parseFloat(prompt("Unafika wapi mkubwa? Kilomita ngapi?"));
-    if (isNaN(distanceInKm) || distanceInKm <= 0,) {
-        console.log("Tafadhali ingiza umbali sahihi kwa kilomita");
+    var distanceInKm = prompt("Unafika wapi Mkubwa? Kilometer ngapi?");
+    distanceInKm = Number(distanceInKm);
+
+    if (isNaN(distanceInKm) || distanceInKm <= 0) {
+        console.log("Tafadhali ingiza namba halali ya kilomita.");
         return;
     }
-    const baseFare = 50;
-    const chargePerKm = 15;
 
-    let rideFare = baseFare;
-    let distanceFare = distanceInKm * chargePerKm;
-    let totalFare = distanceFare * rideFare;
+    let baseFare = 50;
+    let chargePerKm = 15;
+    let totalFare = baseFare + (distanceInKm * chargePerKm);
 
-    console.log('Uko kwote? Io ni ${distanceInKm} km:');
-    console,log('Ukikalia pikipiki: KES $(rideFare}');
-    console.log('Mpaka huko: KES ${distanceFare}');
-    console.log('Total: KES ${totalFare}');
+    let message = `Uko kwote? Io ni ${distanceInKm} km:\n`;
+    message += `Ukikalia Pikipiki: KES ${baseFare}\n`;
+    message += `Mpaka Uko: KES ${distanceInKm * chargePerKm}\n`;
+    message += `Total: KES ${totalFare}\n\n`;
+    message += "Panda Pikipiki!";
 
-    console.log('\nPanda Pikipiki');
+    console.log(message);
 }
+
+calculateBodaFare();

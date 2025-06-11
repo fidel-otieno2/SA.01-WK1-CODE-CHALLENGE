@@ -1,22 +1,28 @@
+const { MessageChannel } = require("worker_threads");
+
 function calculateChaiIngredients() {
-    let numberOfCups = parseInt(prompt('Karibu! How many cups of Chai Bora would you like to make?'), 10);
+    let numberOfCups = window.prompt("Karibu! How many cups of Chai Bora would you like to make?")
+    numberOfCups = Number(numberOfCups);
 
     if (isNaN(numberOfCups) || numberOfCups <= 0) {
-        console.log("Please enter a valid number of cups")
+        console.log("Please enter a valid number of cups.");
         return;
     }
 
     let water = numberOfCups * 200;
-    let milk = numberOfCups * 50; 
+    let milk = numberOfCups * 50;
     let teaLeaves = numberOfCups * 1;
-    let sugar = numberOfCups * 2; 
+    let sugar = numberOfCups * 2;
 
-    console.log(`To make ${numberOfCups} cups of Kenyan Chai, you will need:`);
-    console.log(`Water: ${water} ml`);
-    console.log(`Milk: ${milk} ml`);
-    console.log(`Tea Leaves (Majani): ${teaLeaves} tablespoon(s)`);
-    console.log(`Sugar (Sukari): ${sugar} teaspoon(s)`);
+    let message = Message(`To make ${numberOfCups} cups of Kenyan Chai, you will need:\n`;
+            `Water: ${water} ml\n`;
+            `Milk: ${milk} ml\n`;
+            `Tea Leaves (Majani): ${teaLeaves} tablespoons\n`;
+            `Sugar (Sukari): ${sugar} teaspoons\n`;
+            "Enjoy your Chai Bora!";
+    )
 
-    console.log("\nEnjoy your Chai Bora!");
-
+    console.log(message);
 }
+
+calculateChaiIngredients();
