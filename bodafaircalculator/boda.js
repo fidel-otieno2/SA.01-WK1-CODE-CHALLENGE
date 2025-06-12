@@ -11,13 +11,14 @@ function calculateBodaFare() {
     let chargePerKm = 15;
     let totalFare = baseFare + (distanceInKm * chargePerKm);
 
-    let message = `Uko kwote? Io ni ${distanceInKm} km:\n`;
-    message += `Ukikalia Pikipiki: KES ${baseFare}\n`;
-    message += `Mpaka Uko: KES ${distanceInKm * chargePerKm}\n`;
-    message += `Total: KES ${totalFare}\n\n`;
-    message += "Panda Pikipiki!";
+    let message = (`Uko kwote? Io ni ${distanceInKm} km:\n
+        Ukikalia Pikipiki: KES ${baseFare}\n
+        Mpaka Uko: KES ${distanceInKm * chargePerKm}\n
+        Total: KES ${totalFare}\n\n
+        Panda Pikipiki!`
+    )
 
-    console.log(message);
+    alert(message);
 }
 
 calculateBodaFare();

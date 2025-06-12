@@ -1,4 +1,4 @@
-const { MessageChannel } = require("worker_threads");
+
 
 function calculateChaiIngredients() {
     let numberOfCups = window.prompt("Karibu! How many cups of Chai Bora would you like to make?")
@@ -14,15 +14,15 @@ function calculateChaiIngredients() {
     let teaLeaves = numberOfCups * 1;
     let sugar = numberOfCups * 2;
 
-    let message = Message(`To make ${numberOfCups} cups of Kenyan Chai, you will need:\n`;
-            `Water: ${water} ml\n`;
-            `Milk: ${milk} ml\n`;
-            `Tea Leaves (Majani): ${teaLeaves} tablespoons\n`;
-            `Sugar (Sukari): ${sugar} teaspoons\n`;
-            "Enjoy your Chai Bora!";
+    let message = (`To make ${numberOfCups} cups of Kenyan Chai, you will need:\n
+            Water: ${water} ml\n
+            Milk: ${milk} ml\n
+            Tea Leaves (Majani): ${teaLeaves} tablespoons\n
+            Sugar (Sukari): ${sugar} teaspoons\n
+            Enjoy your Chai Bora!`
     )
 
-    console.log(message);
+    alert(message);
 }
 
 calculateChaiIngredients();
